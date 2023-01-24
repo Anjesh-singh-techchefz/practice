@@ -1,31 +1,31 @@
-import catchAsync from '../../helpers/catchAsync';
-import responseObjectClass from '../../helpers/responseObjectClass';
-import AppError from '../../helpers/AppError';
-import englishProficienySchema from '../model/englishProficiency'
+const catchAsync = require('../helpers/catchAsync').catchAsync;
+const responseObjectClass = require('../helpers/responseObjectClass').ResponseObjectClass;
+const AppError = require('../helpers/AppError').AppError;
+const englishProficienySchema = require('../model/englishProficiency');
 
-const responseObject = new responseObjectClass()
+const responseObject = new responseObjectClass();
 
 const englishProficiency = catchAsync(async (req, res, next) => {
-
   let {
     user: { guid },
     body: { isExamTaken, examName, examVersion, pastDetails }
   } = req;
 
-  const updateEnglishProficieny = await englishProficienySchema.findOneAndUpdate(
-    { userGUID: guid },
-    {
-      $set: {
-        isExamTaken,
-        examName,
-        examVersion,
-        pastDetails
-      }
-    },
-    {new : true}
-  );
+  const updateEnglishProficieny =
+    await englishProficienySchema.findOneAndUpdate(
+      { userGUID: guid },
+      {
+        $set: {
+          isExamTaken,
+          examName,
+          examVersion,
+          pastDetails
+        }
+      },
+      { new: true }
+    );
 
-  if(!updateEnglishProficieny){
+  if (!updateEnglishProficieny) {
     const englishProficiency = {
       isExamTaken,
       examName,
@@ -37,7 +37,8 @@ const englishProficiency = catchAsync(async (req, res, next) => {
       englishProficiency
     );
 
-    if(!createEnglishProficiency) return next( new AppError('unable to create English Proficiency', 409))
+    if (!createEnglishProficiency)
+      return next(new AppError('unable to create English Proficiency', 409));
 
     const returnObj = new responseObject({
       success: true,
@@ -47,7 +48,6 @@ const englishProficiency = catchAsync(async (req, res, next) => {
     });
 
     return res.send(returnObj);
-
   }
 
   const returnObj = responseObject.create({
@@ -57,8 +57,7 @@ const englishProficiency = catchAsync(async (req, res, next) => {
     code: 200
   });
   return res.send(returnObj);
-
-})
+});
 
 export default {
   englishProficiency

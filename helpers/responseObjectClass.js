@@ -1,7 +1,7 @@
-import httpContext from 'express-http-context';
+const httpContext = require ('express-http-context');
 
 /* It's a class that creates a response object */
-export default class ResponseObject {
+exports.ResponseObjectClass = class ResponseObject {
   /**
    * It creates a new Error object with the given code, message, success and data
    * @param [code=500] - The HTTP status code.

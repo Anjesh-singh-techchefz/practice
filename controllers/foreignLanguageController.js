@@ -1,7 +1,7 @@
-import catchAsync from '../../helpers/catchAsync';
-import responseObjectClass from '../../helpers/responseObjectClass';
-import AppError from '../../helpers/AppError';
-import foreignLangauge from './foreignLanguageModel';
+const catchAsync = require('../helpers/catchAsync').catchAsync;
+const responseObjectClass = require('../helpers/responseObjectClass').ResponseObjectClass;
+const AppError = require('../helpers/AppError').AppError;
+const foreignLangauge = require('../model/foreignLanguageModel');
 
 const responseObject = new responseObjectClass();
 

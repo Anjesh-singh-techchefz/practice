@@ -1,7 +1,7 @@
-import catchAsync from '../../helpers/catchAsync';
-import responseObjectClass from '../../helpers/responseObjectClass';
-import AppError from '../../helpers/AppError';
-import education from '../model/addEducationModel';
+const catchAsync = require('../helpers/catchAsync').catchAsync;
+const responseObjectClass = require('../helpers/responseObjectClass').ResponseObjectClass;
+const AppError = require('../helpers/AppError').AppError
+const education = require('../model/addEducationModel');
 
 const responseObject = new responseObjectClass();
 

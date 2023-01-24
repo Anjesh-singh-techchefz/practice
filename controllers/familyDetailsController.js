@@ -1,7 +1,7 @@
-import catchAsync from '../../helpers/catchAsync';
-import responseObjectClass from '../../helpers/responseObjectClass';
-import AppError from '../../helpers/AppError';
-import familyDetails from './familyDetailsModule';
+const catchAsync = require('../helpers/catchAsync').catchAsync;
+const responseObjectClass = require('../helpers/responseObjectClass').ResponseObjectClass;
+const AppError = require('../helpers/AppError').AppError;
+const familyDetails = require('../model/familyDetailsModule')
 
 const responseObject = new responseObjectClass();
 
@@ -30,7 +30,7 @@ const updateFamilyDetails = catchAsync(async (req, res, next) => {
         noOfchildren
       }
     },
-    {new: true}               //fetch new value
+    { new: true } //fetch new value
   );
 
   if (!updateFamily) {

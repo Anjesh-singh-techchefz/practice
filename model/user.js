@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const { v4: uuid } = require('uuid');
 
 let userSchema = new mongoose.Schema(
@@ -9,11 +9,25 @@ let userSchema = new mongoose.Schema(
         return uuid();
       }
     },
-    name: {type: String},
-    userName: {type: String, required : true, unique: true},
-    email: {type: String, required: true, unique: true},
-    mobile: {type: Number},
-    password: {type: String, required: true}
+    name: {
+      salutation: { type: String, enum: ['Mr.', 'Ms.', 'Mrs.'] },
+      first: { type: String, default: '' },
+      middle: { type: String, default: '' },
+      last: { type: String, default: '' }
+    },
+    dob: { type: Date },
+    age: { type: String, default: '' },
+    gender: { type: String, default: '' },
+    userName: { type: String, required: true, unique: true },
+    contactDetails: {
+      email: { type: String, unique: true },
+      mobile: { type: Number, default: '' }
+    },
+    password: {
+      current: { type: String, select: false },
+      updatedAt: { type: Date, default: Date.now },
+      previousPasswords: [{ type: String, select: false }]
+    }
   },
   { timestamps: true }
 );
