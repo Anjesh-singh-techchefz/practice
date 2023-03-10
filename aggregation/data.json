@@ -1,0 +1,156 @@
+[
+  {
+    "companyName": "Apple",
+    "model": "iPhone 14",
+    "price": 240000,
+    "size": {
+      "length": 10,
+      "width": 5
+    },
+    "color": "Red",
+    "inStock": true,
+    "ram": 16,
+    "internalStorage": 128,
+    "battery": "4500 mAH"
+  },
+  {
+    "companyName": "Apple",
+    "model": "iPhone 13",
+    "price": 180000,
+    "size": {
+      "length": 9.5,
+      "width": 5
+    },
+    "color": "Black",
+    "inStock": true,
+    "ram": 8,
+    "internalStorage": 64,
+    "battery": "4500 mAH"
+  },
+  {
+    "companyName": "Samsung",
+    "model": "on8",
+    "price": 25999,
+    "size": {
+      "length": 8.6,
+      "width": 4.4
+    },
+    "color": "Blue",
+    "inStock": false,
+    "ram": 6,
+    "internalStorage": 128,
+    "battery": "5000 mAH"
+  },
+  {
+    "companyName": "samsung",
+    "model": "j7",
+    "price": 23000,
+    "size": {
+      "length": 8,
+      "width": 5
+    },
+    "color": "yellow",
+    "inStock": true,
+    "ram": 12,
+    "internalStorage": 64,
+    "battery": "4000 mAH"
+  },
+  {
+    "companyName": "oppo",
+    "model": "Reno8T",
+    "price": 29999,
+    "size": {
+      "length": 17,
+      "width": 5
+    },
+    "color": "Black",
+    "inStock": true,
+    "ram": 8,
+    "internalStorage": 128,
+    "battery": "4800 mAH"
+  },
+  {
+    "companyName": "oppo",
+    "model": "A17k",
+    "price": 9499,
+    "size": {
+      "length": 15,
+      "width": 5
+    },
+    "color": "Gold",
+    "inStock": false,
+    "ram": 3,
+    "internalStorage": 64,
+    "battery": "5000 mAH"
+  },
+  {
+    "companyName": "onePlus",
+    "model": "Nord CE2",
+    "price": 19950,
+    "size": {
+      "length": 14,
+      "width": 5
+    },
+    "color": "Blue",
+    "inStock": true,
+    "ram": 6,
+    "internalStorage": 128,
+    "battery": "5500 mAH"
+  },
+  {
+    "companyName": "onePlus",
+    "model": "10R",
+    "price": 34499,
+    "size": {
+      "length": 15,
+      "width": 5
+    },
+    "color": "Green",
+    "inStock": true,
+    "ram": 8,
+    "internalStorage": 128,
+    "battery": "5000 mAH"
+  },
+  {
+    "companyName": "Realme",
+    "model": "C30",
+    "price": 5600,
+    "size": {
+      "length": 10,
+      "width": 4
+    },
+    "color": "violet",
+    "inStock": false,
+    "ram": 2,
+    "internalStorage": 32,
+    "battery": "5000 mAH"
+  },
+  {
+    "companyName": "Realme",
+    "model": "C33",
+    "price": 8999,
+    "size": {
+      "length": 15,
+      "width": 5
+    },
+    "color": "white",
+    "inStock": true,
+    "ram": 3,
+    "internalStorage": 32,
+    "battery": "3000 mAH"
+  },
+  {
+    "companyName": "sony",
+    "model": "xperia L",
+    "price": 14490,
+    "size": {
+      "length": 11,
+      "width": 3.5
+    },
+    "color": "white",
+    "inStock": true,
+    "ram": 1,
+    "internalStorage": 32,
+    "battery": "2400 mAH"
+  }
+]
