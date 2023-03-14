@@ -43,15 +43,28 @@ mongoose.connection.on('disconnected', function () {
 });
 
 const agg = async () => {
-  const val = await mobile.aggregate([{ $currentOp: { allUsers: true } }]);
+  const data = await mobile.aggregate([
+    {
+      $facet: {
+        gapFilling: [
+          {
+            $densify: {
+              field: 'price',
+              range: {
+                step: 1000,
+                bounds: [5600, 30000]
+              }
+            }
+          }
+        ],
+        Matching: [{ $match: { price: { $gte: 10000 } } }]
+      }
+    }
+  ]);
 
-  // console.log(
-  //   'val : ================================>>>>>>>>>>>>>>>>>>>>>>>',
-  //   JSON.stringify(val)
-  // );
   console.log(
-    'val : ================================>>>>>>>>>>>>>>>>>>>>>>>',
-    val
+    'data : ================================>>>>>>>>>>>>>>>>>>>>>>>',
+    data
   );
 };
 
